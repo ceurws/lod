@@ -1,0 +1,100 @@
+ERROR:root:This method is deprecated. Instead override `create_grab_instance` method in you spider sub-class
+ERROR:grab.spider.base:Using `grab_config` attribute is deprecated. Override `create_grab_instance method instead.
+DEBUG:grab.spider.base:Using memory backend for task queue
+ERROR:root:Call to deprecated function tree. Use grab.doc.tree instead.
+Traceback (most recent call last):
+  File "spider.py", line 80, in task_initial
+    p.parse()
+  File "/home/tobold/vahdati/Desktop/sempubchallenge2014-task1/CeurWsParser/parsers/base.py", line 83, in parse
+    if config.DEBUG:
+AttributeError: 'module' object has no attribute 'DEBUG'
+ERROR:root:Call to deprecated function tree. Use grab.doc.tree instead.
+Traceback (most recent call last):
+  File "spider.py", line 80, in task_initial
+    p.parse()
+  File "/home/tobold/vahdati/Desktop/sempubchallenge2014-task1/CeurWsParser/parsers/base.py", line 163, in parse
+    if config.DEBUG:
+AttributeError: 'module' object has no attribute 'DEBUG'
+ERROR:root:Call to deprecated function tree. Use grab.doc.tree instead.
+ERROR:root:Call to deprecated function tree. Use grab.doc.tree instead.
+Traceback (most recent call last):
+  File "spider.py", line 80, in task_initial
+    p.parse()
+  File "/home/tobold/vahdati/Desktop/sempubchallenge2014-task1/CeurWsParser/parsers/base.py", line 163, in parse
+    if config.DEBUG:
+AttributeError: 'module' object has no attribute 'DEBUG'
+ERROR:root:Call to deprecated function tree. Use grab.doc.tree instead.
+Traceback (most recent call last):
+  File "spider.py", line 80, in task_initial
+    p.parse()
+  File "/home/tobold/vahdati/Desktop/sempubchallenge2014-task1/CeurWsParser/parsers/base.py", line 83, in parse
+    if config.DEBUG:
+AttributeError: 'module' object has no attribute 'DEBUG'
+ERROR:root:Call to deprecated function tree. Use grab.doc.tree instead.
+ERROR:root:Call to deprecated function tree. Use grab.doc.tree instead.
+ERROR:root:Call to deprecated function tree. Use grab.doc.tree instead.
+/home/tobold/vahdati/.local/lib/python2.7/site-packages/SPARQLWrapper-1.6.4-py2.7.egg/SPARQLWrapper/Wrapper.py:388: UserWarning: urlgrabber not installed in the system. The execution of this method has no effect.
+ERROR:root:Call to deprecated function tree. Use grab.doc.tree instead.
+Traceback (most recent call last):
+  File "spider.py", line 80, in task_initial
+    p.parse()
+  File "/home/tobold/vahdati/Desktop/sempubchallenge2014-task1/CeurWsParser/parsers/base.py", line 83, in parse
+    if config.DEBUG:
+AttributeError: 'module' object has no attribute 'DEBUG'
+ERROR:root:Call to deprecated function tree. Use grab.doc.tree instead.
+ERROR:root:Call to deprecated function tree. Use grab.doc.tree instead.
+Traceback (most recent call last):
+  File "spider.py", line 80, in task_initial
+    p.parse()
+  File "/home/tobold/vahdati/Desktop/sempubchallenge2014-task1/CeurWsParser/parsers/base.py", line 83, in parse
+    if config.DEBUG:
+AttributeError: 'module' object has no attribute 'DEBUG'
+DEBUG:grab.spider.base:Job done!
+[TASK http://ceur-ws.org/] ==== started ====
+[TASK http://ceur-ws.org/][PARSER parsers.proceedings_parser.ProceedingsRelationsParser] Error: 'module' object has no attribute 'DEBUG'
+[TASK http://ceur-ws.org/][PARSER parsers.workshop_parser.WorkshopSummaryParser] Error: 'module' object has no attribute 'DEBUG'
+[TASK http://ceur-ws.org/][PARSER WorkshopAcronymParser] nothing to extract!
+[TASK http://ceur-ws.org/][PARSER parsers.workshop_parser.WorkshopRelationsParser] Error: 'module' object has no attribute 'DEBUG'
+[TASK http://ceur-ws.org/][PARSER parsers.proceedings_parser.ProceedingsSummaryParser] Error: 'module' object has no attribute 'DEBUG'
+[TASK http://ceur-ws.org/] ==== finished ====
+[TASK http://ceur-ws.org/Vol-1049/] ==== started ====
+[TASK http://ceur-ws.org/Vol-1049/][PARSER WorkshopPageParser] proper parser method hasn't been found
+[TASK http://ceur-ws.org/Vol-1049/][PARSER parsers.workshop_parser.EditorAffiliationParser] Error: 'module' object has no attribute 'DEBUG'
+[TASK http://ceur-ws.org/Vol-1049/][PARSER JointWorkshopsEditorsParser] proper parser method hasn't been found
+[TASK http://ceur-ws.org/Vol-1049/][PARSER parsers.publication_parser.PublicationParser] Error: 'module' object has no attribute 'DEBUG'
+[TASK http://ceur-ws.org/Vol-1049/] ==== finished ====
+Publications done: 0
+Publications failed: 0
+Counters:
+  upload-size-with-cache: 0.0
+  upload-size: 0.0
+  task-initial-ok: 2
+  task-initial-network: 2
+  task-initial-initial: 2
+  task-initial: 2
+  task: 2
+  request-processed: 2
+  request-network: 2
+  request: 2
+  download-size-with-cache: 1463052.0
+  download-size: 1463052.0
+
+Lists:
+  
+Network download: 1.4 MB
+Queue size: 0
+Threads: 1
+Timers:
+  DOM: 0.121
+  selector: 0.000
+  task_queue: 0.000
+  network-name-lookup: 0.001
+  task_generator: 0.002
+  network-connect: 0.005
+  network_transport: 0.177
+  network-total: 0.190
+  response_handler.task_initial: 1.314
+  response_handler: 1.314
+  total: 1.523
+
+
