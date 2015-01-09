@@ -1186,8 +1186,6 @@
 "http://ceur-ws.org/Vol-105/mcdowell-submission.pdf",
 "http://ceur-ws.org/Vol-105/Paik%20paper-www2004-ws.pdf",
 "http://ceur-ws.org/Vol-105/TowardsSWPortals.pdf",
-"http://ceur-ws.org/Vol-105/WE-SW%20Wkshop%20Schwabe.pdf",
-"http://ceur-ws.org/Vol-105/Web%20Agent-s%20Enclaves%20–%20A%20New%20Opportunity%20for%20the%20Semantic%20Web%20Services.pdf",
 "http://ceur-ws.org/Vol-105/Lei-ontoweaver-s.pdf",
 "http://ceur-ws.org/Vol-105/DeckerFrank.pdf",
 "http://ceur-ws.org/Vol-1050/",
