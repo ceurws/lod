@@ -1,0 +1,137 @@
+** apologies for cross-posting **
+
+==== Call for Challenge: Semantic Publishing ====
+
+Challenge Website: https://github.com/ceurws/lod/wiki/SemPub2015
+
+12th Extended Semantic Web Conference (ESWC) 2015
+Dates: May 31th - June 4th, 2015
+Venue: Portoroz, Slovenia
+Hashtag: #eswc2015
+Feed: @eswc_conf
+Site: http://2015.eswc-conferences.org
+General Chair: Fabien Gandon (Inria, Sophia Antipolis, FR)
+Challenge Coordinator: Milan Stankovic (Sepage & Universite Paris-Sorbonne, FR)
+Challenge Chairs:
+- Angelo Di Iorio (Department of Computer Science and Engineering, University of Bologna, IT)
+- Anastasia Dimou (PhD student at Ghent University, BE) 
+- Christoph Lange (Enterprise Information Systems, University of Bonn / Fraunhofer IAIS, DE)
+- Sahar Vahdati (PhD student at the University of Bonn, DE)
+
+
+MOTIVATION AND OBJECTIVES
+
+This is the next iteration of the successful Semantic Publishing Challenge of ESWC 2014. We continue pursuing the objective of assessing the quality of scientific output,  evolving the dataset bootstrapped in 2014 to take into account the wider ecosystem of publications. 
+To achieve that, this year’s challenge focuses on refining and enriching an existing linked open dataset about workshops, their publications and their authors. 
+Aspects of “refining and enriching” include extracting deeper information from the HTML and PDF sources of the workshop proceedings volumes and enriching this information with knowledge from existing datasets. 
+Thus, a combination of broadly investigated technologies in the Semantic Web field, such as Information Extraction (IE), Natural Language Processing (NLP), Named Entity Recognition (NER), link discovery, etc., is required to deal with the challenge’s tasks. 
+
+TARGET AUDIENCE
+The Challenge is open to everyone from industry and academia.
+
+TASKS
+We ask challengers to automatically annotate a set of multi-format input documents and to produce a LOD that fully describes these documents, their context, and relevant parts of their content. The evaluation will consist of evaluating a set of queries against the produced dataset to assess its correctness and completeness.
+
+The primary input dataset is the LOD that has been extracted from the CEUR-WS.org workshop proceedings using the winning extraction tool of the 2014 challenge, plus its full original HTML and PDF source documents. In addition, the challenge uses (as linking targets) existing LOD on scholarly publications.
+
+The input dataset will be split in two parts: a training/testing part and an evaluation part, which will disclosed a few days before the submission deadline. Participants will be asked to run their tool on the evaluation dataset and to produce the final Linked Open Dataset.
+Further details about the organization will be provided in the Challenge wiki. 
+
+The Challenge will include three tasks:
+
+Task 1: Extraction and assessment of workshop proceedings information
+
+Participants are required to extract information from a set of HTML tables of contents published in CEUR-WS.org workshop proceedings. The extracted information is expected to answer queries about the quality of these workshops, for instance by measuring growth, longevity, etc. The task is an extension of the Task 1 of the 2014 Challenge: we will reuse the most challenging quality indicators from last year’s challenge, others will be defined more precisely, others will be completely new.
+
+Task 2: Extracting contextual information from the PDF full text of the papers
+
+Participants are required to extract information from the textual content of the papers (in PDF). That information should provide a deeper understanding of the context in which it was written. 
+In particular, the extracted information is expected to answer queries about authors’ affiliations and research institutions, research grants and fundings, and related works (papers presented in the same venue, addressing similar issues, etc.). The task mainly requires NLP and Entity Recognition techniques.
+
+Task 3: Interlinking
+
+Participants are required to interlink the CEUR-WS.org linked dataset with relevant datasets already existing at the Linked Open Data cloud. In particular, they are expected to interlink persons, papers, events, organizations and publications. All these entities should be identified, disambiguated and interlinked to their correspondences at other LOD datasets. Task 3 can be accomplished either as a named entity recognition and disambiguation task (NLP based entity linking), or as an entity interlinking task, or as a combination of methods.
+
+
+EVALUATION
+Participants will be requested to submit the LOD that their tool produces from the evaluation dataset, as well as a paper that describes their approach. They will also be given a set of queries in natural language form and will be asked to translate those queries into a SPARQL form that works on their LOD.
+The results of the queries on the produced LOD will be compared with the expected output, and precision and recall will be measured to identify the best performing approach. Separately, the most original approach will be assigned by the Program Committee.
+
+FEEDBACK AND DISCUSSION
+A discussion group is open for participants to ask questions and to receive updates about the challenge: https://groups.google.com/forum/#!forum/sempub2015
+
+Participants are invited to subscribe to this group as soon as possible and to communicate their intention to participate. They are also invited to use this channel to discuss problems in the input dataset and to suggest changes.
+
+JUDGING AND PRIZES
+After a first round of review, the Program Committee and the chairs will select a number of submissions conforming to the challenge requirements that will be invited to present their work. Submissions accepted for presentation will receive constructive reviews from the Program Committee, they will be included in the Springer LNCS post-proceedings of ESWC. 
+
+We are also planning to allow winners to present their work in a special slot of the main program and to invite them to submit an extended version of their paper to an international journal.
+
+Six winners will be selected. For each task we will select:
+* best performing tool, given to the paper which will get the highest score in the evaluation
+* most original approach, selected by the Challenge Committee with the reviewing process
+
+An amount of 1500 Euro has already been secured for the final prizes. We are currently working on securing further funding.
+
+
+HOW TO PARTICIPATE
+Participants are required to submit:
+* Abstract: no more than 200 words.
+* Description: It should explain the details of the automated annotation system, including why the system is innovative, how it uses Semantic Web technology, what features or functions the system provides, what design choices were made and what lessons were learned. The description should also summarize how participants have addressed the evaluation tasks. An outlook towards how the data could be consumed is appreciated but not strictly required. Papers must be submitted in PDF format, following the style of the Springer's Lecture Notes in Computer Science (LNCS) series (http://www.springer.com/computer/lncs/lncs+authors), and not exceeding 12 pages in length.
+* The Linked Open Dataset produced by their tool on the evaluation dataset (as a file or as a URL, in Turtle or RDF/XML). 
+* A set of SPARQL queries that work on that LOD and correspond to the natural language queries provided as input
+
+Participants will also be asked to submit their tool (source and/or binaries, or a link these can be downloaded from, or a web service URL) for verification purposes.
+Further submission instructions will be published on the challenge wiki.
+
+All submissions should be provided via the submission system linked from the homepage.
+
+MAILING LIST
+We invite the potential participants to subscribe to our mailing list at https://groups.google.com/forum/#!forum/sempub2015 in order to be kept up to date with the latest news related to the challenge. 
+
+IMPORTANT DATES
+
+* February 5, 2015: Publication of the full description of tasks, rules and queries; publication of the training/testing dataset
+* March 8, 2015, 23:59 (Hawaii time): Deadline for making remarks to the training/testing dataset
+* March 10, 2015: Publication of the final training/testing dataset
+* March 20, 2015, 23:59 (Hawaii time): Abstract Submission
+* April 5, 2015, 23:59 (Hawaii time): Paper Submission (FURTHER INDIVIDUAL EXTENSIONS MAY BE GRANTED)
+* April 12, 2015, 23:59 (Hawaii time): Notification and invitation to submit task results
+* April 24, 2015: Full paper camera-ready
+* April 27, 2015: Publication of the evaluation dataset
+* April 30, 2015, 23:59 (Hawaii time): Results submission
+* June 2-4, 2015: Challenge days
+
+
+CHALLENGE CHAIRS
+* Angelo Di Iorio (Department of Computer Science and Engineering, University of Bologna, IT)
+* Anastasia Dimou (PhD student at Ghent University, BE) 
+* Christoph Lange (Enterprise Information Systems, University of Bonn / Fraunhofer IAIS, DE)
+* Sahar Vahdati (PhD student at the University of Bonn, DE)
+
+PROGRAM COMMITTEE
+
+* Aliaksandr Birukou, Springer Verlag, Heidelberg, Germany
+* Lukasz Bolikowski, Centre for Open Science, ICM, University of Warsaw, Poland
+* Volha Bryl, University of Mannheim, Germany
+* Sarven Capadisli, Bern University of Applied Sciences, Switzerland / University of Bonn, Germany
+* Paolo Ciancarini, University of Bologna
+* Jérôme David, INRIA, France
+* Laura Drăgan, University of Southampton, UK
+* Kai Eckert, University of Mannheim, Germany
+* Jérôme Euzenat, INRIA, France
+* Alexander García Castro, American Psychological Association, US
+* Maxim Kolchin, ITMO University, Saint-Petersburg, Russia
+* Fedor Kozlov, ITMO University, Saint-Petersburg, Russia
+* Peep Küngas, University of Tartu, Estonia
+* Phillip Lord, Newcastle University, UK
+* Philipp Mayr, GESIS, Germany
+* Jodi Schneider, INRIA, France
+* Selver Softic, Graz University of Technology Austria
+* Michael Wagner, Schloss Dagstuhl, Leibniz-Zentrum für Informatik, Germany
+
+We are inviting further members.
+
+ESWC CHALLENGE COORDINATORS
+* Elena Cabrio, INRIA, France
+* Milan Stankovic (Sepage & Universite Paris-Sorbonne, FR)
