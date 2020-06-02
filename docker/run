@@ -47,10 +47,11 @@ error() {
 # show usage
 #
 usage() {
-  echo "$0 [-b|--bash|-h|--help|-s|--start]"
+  echo "$0 [-b|--bash|-h|--help|-k|--kill|-s|--start]"
   echo ""
   echo "-b | --bash: start a bash terminal shell within the currently running container"
   echo "-h | --help: show this usage"
+  echo "-k | --kill: stop the docker image"
   echo "-s | --start: start the docker image"
   exit 1
 }
@@ -62,7 +63,17 @@ startImage() {
   color_msg $blue "starting docker image $tag ..."
   sudo docker run -dit --name ceur-ws -p $port:80 -v $www:/var/www/html $tag
   color_msg $green "... done"
-  color_msg $blue "The webserver should be accessbible now via http://$(hostname):$port"
+  color_msg $blue "The webserver should be accessible now via http://$(hostname):$port"
+}
+
+#
+# stop the docker image
+#
+stopImage() {
+  color_msg $blue "stopping and removing ceur-ws image ..."
+  docker stop ceur-ws
+  docker rm ceur-ws
+  color_msg $green "...done"
 }
 
 #
@@ -80,8 +91,9 @@ do
 
   # optionally show usage
   case $option in
-    -b|--bash) bashInto;; 
+    -b|--bash) bashInto;;
     -h|--help) usage;; 
+    -k|--kill) stopImage;;
     -s|--start)  startImage;;
   esac
 done
