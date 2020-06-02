@@ -1,0 +1,13 @@
+#!/bin/bash
+# WF 2020-06-02
+# adapt to your local www location
+www=/hd/luxio/CEUR-WS/www
+# adapt to your own needs
+port=8880
+# get the current tag from the build script e.g.
+# ceur-ws/webserver:v0.1
+tag=$(grep build build | cut -f4 -d ' ')
+echo "starting docker image $tag ..."
+sudo docker run -dit --name ceur-ws -p $port:80 -v $www:/var/www/html $tag
+echo "... done"
+echo "The webserver should be accessbible now via http://$(hostname):$port"
