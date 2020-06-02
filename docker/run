@@ -7,7 +7,82 @@ port=8880
 # get the current tag from the build script e.g.
 # ceur-ws/webserver:v0.1
 tag=$(grep build build | cut -f4 -d ' ')
-echo "starting docker image $tag ..."
-sudo docker run -dit --name ceur-ws -p $port:80 -v $www:/var/www/html $tag
-echo "... done"
-echo "The webserver should be accessbible now via http://$(hostname):$port"
+
+#ansi colors
+#http://www.csc.uvic.ca/~sae/seng265/fall04/tips/s265s047-tips/bash-using-colors.html
+blue='\033[0;34m'
+red='\033[0;31m'
+green='\033[0;32m' # '\e[1;32m' is too bright for white bg.
+endColor='\033[0m'
+
+#
+# a colored message
+#   params:
+#     1: l_color - the color of the message
+#     2: l_msg - the message to display
+#
+color_msg() {
+  local l_color="$1"
+  local l_msg="$2"
+  echo -e "${l_color}$l_msg${endColor}"
+}
+
+#
+# error
+#
+# show the given error message on stderr and exit
+#
+#   params:
+#     1: l_msg - the error message to display
+#
+error() {
+  local l_msg="$1"
+  # use ansi red for error
+  color_msg $red "Error:" 1>&2
+  color_msg $red "\t$l_msg" 1>&2
+  exit 1
+}
+
+
+# show usage
+#
+usage() {
+  echo "$0 [-b|--bash|-h|--help|-s|--start]"
+  echo ""
+  echo "-b | --bash: start a bash terminal shell within the currently running container"
+  echo "-h | --help: show this usage"
+  echo "-s | --start: start the docker image"
+  exit 1
+}
+
+#
+# start the docker image
+#
+startImage() {
+  color_msg $blue "starting docker image $tag ..."
+  sudo docker run -dit --name ceur-ws -p $port:80 -v $www:/var/www/html $tag
+  color_msg $green "... done"
+  color_msg $blue "The webserver should be accessbible now via http://$(hostname):$port"
+}
+
+#
+# start a bash shell within the currently running container
+#
+bashInto() {
+  sudo docker exec -it ceur-ws bash
+}
+
+# commandline option
+while [  "$1" != ""  ]
+do
+  option=$1
+  shift
+
+  # optionally show usage
+  case $option in
+    -b|--bash) bashInto;; 
+    -h|--help) usage;; 
+    -s|--start)  startImage;;
+  esac
+done
+
