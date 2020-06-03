@@ -2,6 +2,7 @@
 # WF 2020-06-02
 # adapt to your local www location
 www=/hd/luxio/CEUR-WS/www
+ftp=/hd/luxio/CEUR-WS/ftp
 # adapt to your own needs
 port=8880
 # get the current tag from the build script e.g.
@@ -61,7 +62,7 @@ usage() {
 #
 startImage() {
   color_msg $blue "starting docker image $tag ..."
-  sudo docker run -dit --name ceur-ws -p $port:80 -v $www:/var/www/html $tag
+  sudo docker run -dit --name ceur-ws -p $port:80 -v $www:/var/www/html -v $ftp:/var/ftp/pub/publications/CEUR-WS $tag
   color_msg $green "... done"
   color_msg $blue "The webserver should be accessible now via http://$(hostname):$port"
 }
@@ -94,7 +95,8 @@ do
     -b|--bash) bashInto;;
     -h|--help) usage;; 
     -k|--kill) stopImage;;
-    -s|--start)  startImage;;
+    -s|--start)  
+       startImage
   esac
 done
 

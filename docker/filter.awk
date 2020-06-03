@@ -12,13 +12,17 @@ BEGIN {
   host="capri"
   sourceServer="http://ceur-ws.org" 
   targetServer=sprintf("http://%s:%s",host,port) 
+  sourceFtp="http://sunsite.informatik.rwth-aachen.de/ftp/pub/publications/CEUR-WS"
+  targetFtp=sprintf("%s/ftp",targetServer)
 }
-# for each line
+# for each line in the HTML source
 {
   # get the line
   line=$0
   # replace any sourceServer reference with the targetServer reference
   gsub(sourceServer,targetServer,line)
+  # replace any sourceFtp reference with the targetFtp reference
+  gsub(sourceFtp,targetFtp,line)
   # output the modified line
   print line 
 }
