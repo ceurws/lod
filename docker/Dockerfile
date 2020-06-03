@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
 # prepare and enable https://httpd.apache.org/docs/2.4/mod/mod_ext_filter.html
 # special filter to "fix links"
 COPY filter.conf /etc/apache2/conf-available
-COPY --chown=www-data:www-data filter.sh /root/bin/filter.sh
+COPY --chown=www-data:www-data filter.awk /var/www/filter.awk 
 # enable filter module and use configuration
 RUN a2enmod ext_filter&&a2enconf filter
 
