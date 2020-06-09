@@ -19,16 +19,22 @@ BEGIN {
   filter=1
   if ("HTTP_ACCEPT" in ENVIRON) {
     accept=ENVIRON["HTTP_ACCEPT"]
+    proceedings=sprintf("%s%s",sourceServer,uri)
+    gsub("/index.html","",proceedings)
     if (accept=="application/rdf+xml") {
       filter=0
       print "<rdf:RDF xmlns='http://swrc.ontoware.org/ontology#'"
       print "  xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>"
-      proceedings=sprintf("%s%s",sourceServer,uri)
-      gsub("/index.html","",proceeedings)
       printf (" <InProceedings rdf:about='%s'>\n",proceedings)
-      print "<rdf:type rdf:resource='http://xmlns.com/foaf/0.1/Document'/>"
-      print "</InProceedings>"
+      print "    <rdf:type rdf:resource='http://xmlns.com/foaf/0.1/Document'/>"
+      print "  </InProceedings>"
       print "</rdf:RDF>"
+    } else if (accept=="application/json") {
+      filter=0
+      blank="    "
+      json=sprintf("{\n%s'proceedings': {\n%s%s'url': '%s'\n%s}\n}\n",blank,blank,blank,proceedings,blank)
+      gsub("'","\"",json)
+      print json
     }
   } else {
     filter=1
